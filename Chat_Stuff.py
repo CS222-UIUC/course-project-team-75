@@ -3,6 +3,8 @@ from datetime import datetime
 import socket
 import requests
 import os
+import bcrypt
+import hashlib
 
 #take my id, other person's id and get chat id
 def get_chat_id(my,other):
@@ -65,7 +67,9 @@ def log_in():
             return -2
 
     user = input("Input username: ")
-    pw = input("Input password: ")
+    #pw = bcrypt.hashpw(input("Input password: ").encode(),"cringecringe1111".encode())
+    pw = input("Input password: ")+"cringe"
+    pw = hashlib.md5(pw.encode()).hexdigest()
 
     username = user
 
@@ -81,20 +85,37 @@ def log_in():
 
 def chat(name):
     global user_id
-    partner_id = str(requests.post(url="http://158.101.3.109:8000/clients/",data=name,headers={"header1":"GETTING NAME"}).content)[2:-1]
-    while(1):
-        os.system("cls")
-        print("Chatting with "+str(name)+" | Type #EXIT to exit the chat. Be respectful.")
-        print("_______________________________")
-        populate_chat(user_id,partner_id,name)
-        next_chat = input("Enter message: ")
-        if(next_chat == "#EXIT"):
+    try:
+        partner_id = str(requests.post(url="http://158.101.3.109:8000/clients/",data=name,headers={"header1":"GETTING NAME"}).content)[2:-1]
+        while(1):
             os.system("cls")
-            break
-        send_msg(user_id,int(partner_id),next_chat)
+            print("Chatting with "+str(name)+" | Type #R to refresh and #EXIT to exit the chat. Be respectful.")
+            print("_______________________________")
+            populate_chat(user_id,partner_id,name)
+            next_chat = input("Enter message: ")
+            if(next_chat == "#EXIT"):
+                os.system("cls")
+                break
+            elif(next_chat == "#R"):
+                populate_chat(user_id,partner_id,name)
+            else:
+                send_msg(user_id,int(partner_id),next_chat)
+    except:
+        print("Something went wrong. Please try again.")
 
 def create_account():
-    user = input("Choose a username: ")
+    while 1:
+        user = input("Choose a username: ")
+        try:
+            test = requests.post(url="http://158.101.3.109:8000/clients/",data=user,headers={"header1":"GETTING NAME"})
+            if(test.status_code == 200):
+                print("Username already taken.")
+            else:
+                break
+        except:
+            print("Something went wrong. Please try again.")
+            return -2
+
     c = input(user+" is your chosen username. This cannot be changed. Are you sure?: ")
     if(c.lower() != "y" and c.lower() != "yes"):
         create_account()
@@ -108,10 +129,12 @@ def create_account():
         else:
             print("Passwords do not match. Please try again.")
     try:
+        p+="cringe"
+        p = hashlib.md5(p.encode()).hexdigest()
         r = requests.post(url="http://158.101.3.109:8000/clients/",json={"username":user,"password":p},headers={"header1":"ACCOUNT CREATION"})
     except:
         print("Something went wrong. Please try again.")
-        return
+        return -2
 
 users = None
 def get_users(dummy):
@@ -132,7 +155,10 @@ while(user_id < 0):
     else:
         print("Authentication failed. Please try again")
     user_id = log_in()
-#get_users()
+
+
+if not os.path.exists("client_files"):
+   os.makedirs("client_files")
 
 #options:
 #view users
