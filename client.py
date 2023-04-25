@@ -5,6 +5,11 @@ import requests
 import os
 import bcrypt
 import hashlib
+from gooey import Gooey
+from getpass import getpass
+
+from rich.tree import Tree
+from rich import print
 
 #take my id, other person's id and get chat id
 def get_chat_id(my,other):
@@ -36,26 +41,6 @@ def populate_chat(id,other,othername):
         print(new_msg[:-1])
     f.close()
 
-#This pulls the client API from the server and searches for the client IP
-#If the IP is found, the proper user ID is returned
-#Otherwise, one is created and the new IP/ID pair is pushed to the client list
-# def get_id():
-#     hostname = socket.gethostname()
-#     ip = socket.gethostbyname(hostname)
-#     r = requests.get("http://158.101.3.109:8000/clients/")
-#     c = str(r.content)[14:-15]
-#     s = c.split(sep="\\n")
-#     last = None
-#     for x in s:
-#         if(x != ""):
-#             t = x.split(sep=",")
-#             last = t[1]
-#             if(str(ip) == str(t[0])):
-#                 return t[1]
-#     body = str(str(ip)+","+str(int(last)+1))
-#     requests.post(url="http://158.101.3.109:8000/clients/",data=body,headers={"header1":"GETTING ID"})
-#     return int(last)+1
-
 username = ""
 def log_in():
     global username
@@ -65,10 +50,9 @@ def log_in():
         if(c.lower() == "c"):
             create_account()
             return -2
-
+    os.system("cls")
     user = input("Input username: ")
-    #pw = bcrypt.hashpw(input("Input password: ").encode(),"cringecringe1111".encode())
-    pw = input("Input password: ")+"cringe"
+    pw = getpass("Input password: ")+"cringe"
     pw = hashlib.md5(pw.encode()).hexdigest()
 
     username = user
@@ -84,6 +68,9 @@ def log_in():
     return -1
 
 def chat(name):
+    if(name == "chat"):
+        print("To chat, type \"chat\" followed by a valid username.")
+        return 0
     global user_id
     try:
         partner_id = str(requests.post(url="http://158.101.3.109:8000/clients/",data=name,headers={"header1":"GETTING NAME"}).content)[2:-1]
@@ -142,10 +129,10 @@ def get_users(dummy):
     if(users == None):
         response = requests.get(url="http://158.101.3.109:8000/clients/")
         users = response.json()
-    print("Current users:")
+    tree = Tree("Current users")
     for i in users:
-        print(i)
-    print()
+        tree.add(i)
+    print(tree)
 
 user_id = -1
 user_id = log_in()
@@ -160,19 +147,13 @@ while(user_id < 0):
 if not os.path.exists("client_files"):
    os.makedirs("client_files")
 
-#options:
-#view users
-#chat with a user
-#exit a chat
-#exit the app
-
 def help(dummy):
     global m
+    tree = Tree("Available commands")
     k = m.keys()
-    print("Available commands:")
     for i in k:
-        print(i)
-    print()
+        tree.add(i)
+    print(tree)
 
 def ex(dummy):
     global running
@@ -180,21 +161,19 @@ def ex(dummy):
 
 m = {
     "help":help,
-    "exit":ex,
     "users":get_users,
     "chat":chat,
-
+    "exit":ex
 }
 
-
+os.system("cls")
 running = 1
 while(running):
     choice = input("Please use a command, or type \"help\" for more info: ")
+    os.system("cls")
     toks = choice.split(sep=" ")
     if(toks[0] in m):
     #try:
         m[toks[0]](toks[len(toks)-1])
     else:
         print("Unknown command. Try help for a list of commands.")
-    #except:
-    #    print("Command not found")
