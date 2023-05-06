@@ -1,0 +1,58 @@
+.auth {
+    background-image: url('../sus.gif');
+    margin-bottom: 80px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+.sign {
+   
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: white
+}
+.Head{
+    color: white
+}
+
+.header .logo {
+	width: 200px;
+	height: auto;
+}
+
+.header div {
+  float: left;
+  color: #fff;
+  font-family: 'Exo', sans-serif;
+  font-size: 100px;
+  font-weight: 200;
+}
+
+.header div span {
+  color: #003cff !important;
+}
+
+
+.sign-in {
+    background-color: #d1030a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.sign-in:hover {
+    background-color: #3367d6;
+}
+

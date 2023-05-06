@@ -1,0 +1,361 @@
+
+.header .logo {
+	width: 200px;
+	height: auto;
+}
+
+.header div {
+  float: left;
+  color: #fff;
+  font-family: 'Exo', sans-serif;
+  font-size: 100px;
+  font-weight: 200;
+}
+
+.header div span {
+  color: #003cff !important;
+}
+
+
+
+
+
+
+.container {
+	display: flex;
+}
+.side {
+	min-width: 320px;
+	height: 200px;
+	background-color: #a7d7f7;
+  
+	height: 100%;
+	min-height: 100vh;
+	border-right: 1px solid #7b65ea;
+}
+.content {
+	width: 100%;
+	display: flex;
+	padding: 20px 0;
+	align-items: center;
+	flex-direction: column;
+}
+.side .header {
+	background: linear-gradient(262deg, #0496f7, #ffffff);
+  font-size:40px;
+	width: 100%;
+	height: 80px;
+	box-shadow: 0 1px 8px 0 rgba(0, 20, 20, 0.2);
+	display: flex;
+	align-items: center;
+	padding: 0 20px;
+}
+
+.side .header .avatar img {
+	width: 80px;
+	height: 80px;
+  font-size:40px;
+	border-radius: 40px;
+	border: 2px solid #fff;
+	box-shadow: 0 1px 8px 0 rgba(0, 20, 20, 0.2);
+}
+
+.side .header .title {
+	padding: 0 10px;
+	color: #fff;
+	font-size:40px;;
+}
+
+
+.divyam {
+	padding: 0 10px;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+	font-size: 18px;
+
+	display: grid;
+	margin-left: 120px;
+	grid-gap: 100px;
+	font-size: 25px;
+	color: rgb(239, 4, 4);
+	
+  }
+  
+  .divyamli {
+	
+	display: block; 
+	color: rgb(239, 4, 4);
+	padding-top: 30px;
+  }
+
+
+.side .menu ul {
+	display: flex;
+	padding: 0 20px;
+}
+
+.side .menu ul li {
+	list-style: none;
+	
+	font-weight: 700;
+	font-size: 30px;
+	color: rgb(36, 36, 43);
+	letter-spacing: 0.5px;
+	margin-left: 65px;
+	margin-top: -20px;
+}
+
+.side .menu .active {
+	border-bottom: 3px solid 0496f7;
+	padding-bottom: 2px;
+	
+}
+
+.side .messages {
+	padding: 10px 20px;
+	display: flex;
+	align-items: center;
+	transition: 0.2s box-shadow;
+}
+
+
+.room {
+
+	margin-top: -18px;
+	border: 2px solid black;
+	background-color: white;
+	font-family: 'Open Sans', sans-serif;
+	width: 1978px;
+  height: 1093px;;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.room label {
+
+	background-color: #2997e6;
+	height: 120px;
+	align-items: center;
+	text-align: center;
+	font-size: 50px;
+	
+	font-weight: bold;
+	color: white;
+	padding: 20px;
+	
+
+  display: block;
+}
+
+.room input {
+  padding: 5px;
+  margin-left: 575px;
+  margin-top: 0px;
+  text-align: center;
+  width: 400px;
+  height: 50px;
+  color: #1E90FF;
+  font-weight: bold;
+  font-size: 50px;
+
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 10px;
+}
+
+.room button {
+  padding: 5px;
+  font-size: 50px;
+  font-weight: bold;
+  width: 400px;
+  margin-top: -940px;
+  	
+  margin-left: 985px;
+ 
+  background-color: #1E90FF;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+
+.side .avatar img {
+	margin-left: 20px;
+	width: 70px;
+	height: 70px;
+	border-radius: 70px;
+}
+
+.side .message .user {
+	margin-top: -75px;
+	margin-left: 90px;
+	padding: 0 10px;
+	font-weight: bold;
+	letter-spacing: 0.5px;
+	font-size: 18px;
+}
+
+.side .message .text {
+	
+	margin-left: 90px;
+	width: 200px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-weight: 500;
+	padding: 0 10px;
+	font-weight: 300;
+	font-size: 15px;
+	opacity: 0.8;
+	margin-top: 20px;
+}
+
+.side .messages:hover {
+	box-shadow: 0 0 15px 0 rgba(43, 78, 78, 0.1);
+	border-right: 5px solid #ffffff;
+}
+
+.container .card {
+	position: relative;
+	height: 450px;
+}
+
+.content .card .user {
+	width: 380px;
+	height: 450px;
+	object-fit: cover;
+	border-radius: 10px;
+	box-shadow: 0 1px 10px 0 rgba(0, 20, 20, 0.5);
+}
+
+.content .card .user .profile {
+	position: absolute;
+	bottom: 0px;
+	left: 20px;
+    
+}
+
+.content .card .user .name {
+	color: #fff;
+	font-size: 32px;
+	font-weight: 700;
+	letter-spacing: 0.5px;
+	text-shadow: 1px 1px 5px #444;
+}
+
+.content .card .user .name span {
+	font-size: 26px;
+}
+
+.content .card .local {
+	display: flex;
+	align-items: center;
+	padding: 0 0 20px 0;
+}
+
+.content .card .local i {
+	margin: 5px 0;
+	color: #fff;
+}
+
+.content .card .local span {
+	color: #fff;
+	padding: 0 10px;
+	text-shadow: 1px 1px 5px #444;
+}
+
+.content .buttons {
+	margin-top: 10px;
+	display: flex;
+	align-items: center;
+}
+
+.content .buttons .no i {
+	color: #ff085b;
+	font-size: 33px;
+}
+
+.content .buttons .star i {
+	color: #2bb1ff;
+	font-size: 22px;
+}
+
+.content .buttons .heart i {
+	color: #11e298;
+	font-size: 32px;
+}
+
+.content .buttons .no,
+.content .buttons .star,
+.content .buttons .heart {
+	background-color: #fff;
+	width: 70px;
+	height: 70px;
+	box-shadow: 0 1px 10px 0 rgba(0, 20, 20, 0.1);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 70px;
+	margin: 4px;
+	transition: 0.2s transform;
+}
+
+.content .buttons .no:hover,
+.content .buttons .star:hover,
+.content .buttons .heart:hover {
+	transform: scale(1.1);
+}
+
+.content .buttons .star {
+	width: 60px;
+	height: 60px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sign-out button {
+  padding: 5px;
+	float: right;
+  background-color: #f70000;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif ;
+  font-size: 25px;
+}
+.sign-out img{
+	display: block;
+	font-family: Arial, Helvetica, sans-serif ;
+	font-size: 25px;
+	float: right;
+	
+}
+
+.sign-out button:hover {
+  background-color: #FF4F32;
+}
+
+
+
+
+
+
+
+
+
