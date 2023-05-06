@@ -16,6 +16,11 @@ Allows for communication between users who have an account registered with the T
 # Why the project is useful
 Provides a private and secure chat room for communication between users
 
+# Technical Architecture
+This project was made with the React framework and a Firebase database configuration was used. 
+Firebase functions, as well as useEffect, useState, and other React functions were use with the react extension.
+
+
 # Provides reproducible installation instructions
 1. Download the repo
 2. Install React into the main folder (The repo does not contain node_modules, as it is too big for github)
