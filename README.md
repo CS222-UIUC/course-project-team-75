@@ -4,7 +4,7 @@ To try the chat feature, run the client file in a directory containing a folder 
 # Summary of Presentation Introduction
 Our project initally started out as a Django and React web app. However, as we progressed through the app,
 we came to the realization that using React and Firebase would be a more suitable option. This repo contains 
-the code for the React and Firebase web app.
+the code for the React and Firebase web app and also orginal Django dating app.
 
 # What the project does
 Allows for communication between users who have an account registered with the Trouble Web App
