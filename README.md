@@ -1,14 +1,10 @@
 # course-project-team-75
 To try the chat feature, run the client file in a directory containing a folder named "client_files"
 
-# Members and their roles:
-Nick Tsiones: Back-End Programmer (Python, JavaScript)
-Omer Siddiqi: Back-End Programmer (JavaScript- Firebase,useState,ueEffect)
-
-
-Caleb Lee: Front-End Programmer (HTML/HTML5, CSS)
-Tomas Sagartz: Front-End Programmer (HTML/HTML5, CSS), Direction Lead
-
+# Summary of Presentation Introduction
+Our project initally started out as a Django and React web app. However, as we progressed through the app,
+we came to the realization that using React and Firebase would be a more suitable option. This repo contains 
+the code for the React and Firebase web app.
 
 # What the project does
 Allows for communication between users who have an account registered with the Trouble Web App
@@ -33,3 +29,12 @@ Users can find tutorials or use chat based AI for assistance.
 
 # Who maintains and contributes to the project
 Firebase hosts the project, and all members contribute to the project.
+
+
+# Members and their roles:
+Nick Tsiones: Back-End Programmer (Python, JavaScript)
+Omer Siddiqi: Back-End Programmer (JavaScript- Firebase,useState,ueEffect)
+
+
+Caleb Lee: Front-End Programmer (HTML/HTML5, CSS)
+Tomas Sagartz: Front-End Programmer (HTML/HTML5, CSS), Direction Lead
